@@ -14,7 +14,7 @@ public interface BaseAction {
     void initListener();
     void showLoadingContentView();
     void removeLoadingContentView();
-    void initPresenter();
+    //void initPresenter();
     @LayoutRes
     int getRootViewId();
 }

@@ -43,10 +43,16 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+    /**
+     * 登陆网络请求事例。
+     * @param userName
+     * @param passowrd
+     */
     public void login(String userName, String passowrd){
         ShanbayApi api=ApiFactory.newInstance().createApi(ShanbayApi.class);
         api.login(userName,passowrd)
-                .compose(RxHelper.<BaseResponse<LoginEntity>>io_main())
+                .compose(RxHelper.<BaseResponse<LoginEntity>>io_main())//线程切换，直接敲compose(Rxhelper.io_main)
+                .compose(this.<BaseResponse<LoginEntity>>bindToLifecycle())//绑定生命周期，直接敲.compose(this.bindToiLifecycle)
                 .subscribe(new RxSubscriber<LoginEntity>() {
                     @Override
                     public void onSuccess(LoginEntity Data) {
@@ -75,11 +81,11 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @Override
-    public void initPresenter() {
 
-    }
-
+    /**
+     * 布局资源文件
+     * @return
+     */
     @Override
     public int getRootViewId() {
         return R.layout.activity_main;

@@ -6,15 +6,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.trello.rxlifecycle2.components.support.RxFragment;
+import com.trello.rxlifecycle2.components.support.RxDialogFragment;
 
 import cn.henryzhuhao.mainframe.frame.base.action.BaseAction;
 
 /**
- * Created by HenryZhuhao on 2017/3/29.
+ * Author : zhuhao
+ * Date : 4/9/2017
+ *
+ * @Last Modified Time :4/9/2017
+ * Description :
  */
 
-public abstract class BaseFragment extends RxFragment implements BaseAction{
+public abstract class BaseDialog extends RxDialogFragment implements BaseAction{
     public View view;
 
     @Override

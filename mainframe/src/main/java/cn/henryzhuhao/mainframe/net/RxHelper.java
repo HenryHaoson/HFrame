@@ -25,4 +25,13 @@ public class RxHelper {
             }
         };
     }
+
+//    public static <T> ObservableTransformer<T,T> bindToLifecycler(){
+//        return new ObservableTransformer<T, T>() {
+//            @Override
+//            public ObservableSource<T> apply(@NonNull Observable<T> observable) {
+//                return observable.compose(RxLifecycle.bindUntilEvent(this,))
+//            }
+//        };
+//    }
 }
